@@ -830,7 +830,7 @@ int hab_vchan_open(struct uhab_context *ctx,
 	list_add_tail(&vchan->node, &ctx->vchannels);
 	ctx->vcnt++;
 	*vcid = vchan->id;
-	hab_write_unlock(&ctx->ctx_lock, !ctx->kernel);
+	write_unlock(&ctx->ctx_lock);
 
 	return 0;
 }

@@ -487,7 +487,7 @@ int __spi_register_driver(struct module *owner, struct spi_driver *sdrv)
 					continue;
 			}
 
-			pr_warn("SPI driver %s has no spi_device_id for %s\n",
+			pr_err("SPI driver %s has no spi_device_id for %s\n",
 				sdrv->driver.name, of_id->compatible);
 		}
 	}
